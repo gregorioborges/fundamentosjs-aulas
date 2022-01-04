@@ -1,0 +1,22 @@
+new Promise((resolve, reject) => {
+    return resolve(sucesso)
+    return reject(erro)
+})
+
+// Posso tratar o erro ou o sucesso várias vezes, posso fazer várias tratativas.
+.then(sucesso => {}) 
+.then(erro => {})
+.then(sucesso => {})
+.then(sucesso => {})
+.then(erro => {})
+.finally(resultado => {}) // mesmo dando erro ou sucesso, tudo vai se resumir no Finally.
+
+
+Posso utilizar também o Callback dentro do Promise
+const readFile = caminho =>
+    new Promise((resolve, reject) => {
+        fs.readFile(caminho, (error, res) => {
+            error ? reject(error) : resolve(res)
+        }
+        )
+    })
